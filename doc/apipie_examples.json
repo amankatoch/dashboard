@@ -1,0 +1,1160 @@
+{
+  "balance#index": [
+    {
+      "verb": "GET",
+      "path": "/api/v1/payment/balance",
+      "versions": [
+        "1.0"
+      ],
+      "query": "",
+      "request_data": null,
+      "response_data": {
+        "available": 13.44,
+        "pending": 15.45
+      },
+      "code": "200",
+      "show_in_doc": 1,
+      "recorded": true
+    }
+  ],
+  "balance#transactions": [
+    {
+      "verb": "GET",
+      "path": "/api/v1/payment/balance/transactions",
+      "versions": [
+        "1.0"
+      ],
+      "query": "",
+      "request_data": null,
+      "response_data": [
+        {
+          "id": 62,
+          "created_at": "2015-04-01T02:51:16.410Z",
+          "updated_at": "2015-04-01T02:51:16.412Z",
+          "amount": 13.44,
+          "status": "completed",
+          "action": "received",
+          "source": null
+        },
+        {
+          "id": 63,
+          "created_at": "2015-04-01T02:51:16.440Z",
+          "updated_at": "2015-04-01T02:51:16.442Z",
+          "amount": 13.44,
+          "status": "completed",
+          "action": "sent",
+          "source": {
+            "last4": "4242",
+            "type": "Visa",
+            "brand": "Visa",
+            "funding": "credit"
+          }
+        }
+      ],
+      "code": "200",
+      "show_in_doc": 1,
+      "recorded": true
+    }
+  ],
+  "balance#withdraw": [
+    {
+      "verb": "PUT",
+      "path": "/api/v1/payment/balance/withdraw",
+      "versions": [
+        "1.0"
+      ],
+      "query": null,
+      "request_data": {
+      },
+      "response_data": null,
+      "code": "200",
+      "show_in_doc": 1,
+      "recorded": true
+    }
+  ],
+  "beta_requests#create": [
+    {
+      "verb": "POST",
+      "path": "/api/v1/beta_requests",
+      "versions": [
+        "1.0"
+      ],
+      "query": null,
+      "request_data": {
+        "beta_request": {
+          "name": "Fulanito de Tal",
+          "email": "fulanito@gmail.com"
+        }
+      },
+      "response_data": {
+        "id": 8,
+        "name": "Fulanito de Tal",
+        "email": "fulanito@gmail.com"
+      },
+      "code": "201",
+      "show_in_doc": 1,
+      "recorded": true
+    }
+  ],
+  "cards#create": [
+    {
+      "verb": "POST",
+      "path": "/api/v1/payment/cards",
+      "versions": [
+        "1.0"
+      ],
+      "query": null,
+      "request_data": {
+        "card": {
+          "card": "test_tok_2"
+        }
+      },
+      "response_data": {
+        "id": "test_cc_3",
+        "object": "card",
+        "last4": "4242",
+        "type": "Visa",
+        "brand": "Visa",
+        "funding": "credit",
+        "exp_month": 9,
+        "exp_year": 2018,
+        "fingerprint": "eXWMGVNbMZcworZC",
+        "customer": "test_cus_1",
+        "country": "US",
+        "name": "Johnny App",
+        "address_line1": null,
+        "address_line2": null,
+        "address_city": null,
+        "address_state": null,
+        "address_zip": null,
+        "address_country": null,
+        "cvc_check": null,
+        "address_line1_check": null,
+        "address_zip_check": null,
+        "number": "4242424242424242",
+        "cvc": "999"
+      },
+      "code": "200",
+      "show_in_doc": 1,
+      "recorded": true
+    }
+  ],
+  "cards#index": [
+    {
+      "verb": "GET",
+      "path": "/api/v1/payment/cards",
+      "versions": [
+        "1.0"
+      ],
+      "query": "",
+      "request_data": null,
+      "response_data": [
+        {
+          "id": "test_cc_3",
+          "object": "card",
+          "last4": "4242",
+          "type": "Visa",
+          "brand": "Visa",
+          "funding": "credit",
+          "exp_month": 9,
+          "exp_year": 2018,
+          "fingerprint": "eXWMGVNbMZcworZC",
+          "customer": "test_cus_1",
+          "country": "US",
+          "name": "Johnny App",
+          "address_line1": null,
+          "address_line2": null,
+          "address_city": null,
+          "address_state": null,
+          "address_zip": null,
+          "address_country": null,
+          "cvc_check": null,
+          "address_line1_check": null,
+          "address_zip_check": null,
+          "number": "4242424242424242",
+          "cvc": "999"
+        }
+      ],
+      "code": "200",
+      "show_in_doc": 1,
+      "recorded": true
+    }
+  ],
+  "device_tokens#create": [
+    {
+      "verb": "POST",
+      "path": "/api/v1/users/565/tokens",
+      "versions": [
+        "1.0"
+      ],
+      "query": null,
+      "request_data": {
+        "token": {
+          "token": "<some-valid-token>",
+          "device_type": "ios"
+        }
+      },
+      "response_data": {
+        "id": 16,
+        "token": "<some-valid-token>",
+        "device_type": "ios",
+        "user_id": 565,
+        "created_at": "2015-04-01T02:51:15.730Z",
+        "updated_at": "2015-04-01T02:51:15.730Z"
+      },
+      "code": "201",
+      "show_in_doc": 1,
+      "recorded": true
+    }
+  ],
+  "email_subscriptions#create": [
+    {
+      "verb": "POST",
+      "path": "/api/v1/subscriptions",
+      "versions": [
+        "1.0"
+      ],
+      "query": null,
+      "request_data": {
+        "subscription": {
+          "email": "test@email.com"
+        }
+      },
+      "response_data": {
+        "id": 8,
+        "email": "test@email.com"
+      },
+      "code": "201",
+      "show_in_doc": 1,
+      "recorded": true
+    }
+  ],
+  "matches#index": [
+    {
+      "verb": "GET",
+      "path": "/api/v1/matches",
+      "versions": [
+        "1.0"
+      ],
+      "query": "",
+      "request_data": null,
+      "response_data": [
+        {
+          "session_request_id": 199,
+          "player": {
+            "id": 569,
+            "name": "Clinton Wolff",
+            "photo_public_id": null
+          },
+          "message": "Dolorem asperiores et sed optio.",
+          "initiated_by_me": false,
+          "days": [
+            {
+              "date": "2015-04-08",
+              "time_start": "08:00 PM",
+              "time_end": "10:00 PM"
+            }
+          ],
+          "status": "confirmed",
+          "accepted_rejected_at": null,
+          "locations": [
+            "Chapel Hill Tennis Club"
+          ],
+          "invited_user_comment": null,
+          "created_at": "2015-04-01T02:51:15.868Z",
+          "updated_at": "2015-04-01T02:51:15.868Z"
+        },
+        {
+          "session_request_id": 198,
+          "player": {
+            "id": 568,
+            "name": "Gina Stracke",
+            "photo_public_id": null
+          },
+          "message": "Quasi ullam autem quas voluptatibus placeat occaecati magni.",
+          "initiated_by_me": true,
+          "days": [
+            {
+              "date": "2015-04-02",
+              "time_start": "08:00 AM",
+              "time_end": "10:00 AM"
+            }
+          ],
+          "status": "accepted",
+          "accepted_rejected_at": null,
+          "locations": [
+            "SF Country Club"
+          ],
+          "invited_user_comment": "it will be fun!",
+          "created_at": "2015-04-01T02:51:15.843Z",
+          "updated_at": "2015-04-01T02:51:15.843Z"
+        },
+        {
+          "session_request_id": 197,
+          "player": {
+            "id": 567,
+            "name": "Alessandro Tremblay",
+            "photo_public_id": null
+          },
+          "message": "Quis fuga est ullam.",
+          "initiated_by_me": true,
+          "days": [
+            {
+              "date": "2015-04-08",
+              "time_start": "08:00 AM",
+              "time_end": "11:00 AM"
+            },
+            {
+              "date": "2015-04-08",
+              "time_start": "08:00 PM",
+              "time_end": "10:00 PM"
+            },
+            {
+              "date": "2015-04-10",
+              "time_start": "06:00 PM",
+              "time_end": "09:00 PM"
+            }
+          ],
+          "status": "waiting",
+          "accepted_rejected_at": null,
+          "locations": null,
+          "invited_user_comment": null,
+          "created_at": "2015-04-01T02:51:15.809Z",
+          "updated_at": "2015-04-01T02:51:15.809Z"
+        }
+      ],
+      "code": "200",
+      "show_in_doc": 1,
+      "recorded": true
+    },
+    {
+      "verb": "GET",
+      "path": "/api/v1/matches",
+      "versions": [
+        "1.0"
+      ],
+      "query": "status_in%5B%5D=3",
+      "request_data": null,
+      "response_data": [
+        {
+          "session_request_id": 202,
+          "player": {
+            "id": 573,
+            "name": "Carli Klein",
+            "photo_public_id": null
+          },
+          "message": "Et placeat earum dolor.",
+          "initiated_by_me": true,
+          "days": [
+            {
+              "date": "2015-04-08",
+              "time_start": "08:00 PM",
+              "time_end": "10:00 PM"
+            }
+          ],
+          "status": "confirmed",
+          "accepted_rejected_at": null,
+          "locations": [
+            "Chapel Hill Tennis Club"
+          ],
+          "invited_user_comment": null,
+          "created_at": "2015-04-01T02:51:15.979Z",
+          "updated_at": "2015-04-01T02:51:15.979Z"
+        }
+      ],
+      "code": "200",
+      "show_in_doc": 0,
+      "recorded": true
+    }
+  ],
+  "notifications#index": [
+    {
+      "verb": "GET",
+      "path": "/api/v1/notifications",
+      "versions": [
+        "1.0"
+      ],
+      "query": "status_in%5B%5D=0&status_in%5B%5D=1",
+      "request_data": null,
+      "response_data": [
+        {
+          "id": 382,
+          "title": "test notifcation 1",
+          "status": "unread",
+          "created_at": "2015-04-01T02:51:16.031Z",
+          "user": {
+            "id": 575,
+            "name": "Kelley Stanton Sr."
+          }
+        },
+        {
+          "id": 383,
+          "title": "test notifcation 2",
+          "status": "read",
+          "created_at": "2015-04-01T02:51:16.046Z",
+          "user": {
+            "id": 576,
+            "name": "Evalyn Bogisich"
+          }
+        }
+      ],
+      "code": "200",
+      "show_in_doc": 1,
+      "recorded": true
+    }
+  ],
+  "notifications#update_status": [
+    {
+      "verb": "PUT",
+      "path": "/api/v1/notifications/update_status",
+      "versions": [
+        "1.0"
+      ],
+      "query": null,
+      "request_data": {
+        "status": 1,
+        "ids": [
+          385
+        ]
+      },
+      "response_data": null,
+      "code": "204",
+      "show_in_doc": 1,
+      "recorded": true
+    }
+  ],
+  "session_invitations#feedback": [
+    {
+      "verb": "POST",
+      "path": "/api/v1/session_invitations/211/feedback",
+      "versions": [
+        "1.0"
+      ],
+      "query": null,
+      "request_data": {
+        "feedback": {
+          "message": "it was fun!",
+          "skill_ids": [
+            45
+          ]
+        }
+      },
+      "response_data": {
+        "message": "it was fun!",
+        "skills": [
+          {
+            "id": 45,
+            "name": "Test Skill 1"
+          }
+        ]
+      },
+      "code": "200",
+      "show_in_doc": 1,
+      "recorded": true
+    }
+  ],
+  "session_invitations#index": [
+    {
+      "verb": "GET",
+      "path": "/api/v1/session_invitations",
+      "versions": [
+        "1.0"
+      ],
+      "query": "",
+      "request_data": null,
+      "response_data": [
+        {
+          "id": 208,
+          "user": {
+            "id": 596,
+            "name": "Alberta Hintz V",
+            "photo_public_id": null
+          },
+          "message": "Perspiciatis consequatur adipisci consequuntur eius voluptate maxime delectus.",
+          "status": "waiting",
+          "accepted_rejected_at": null,
+          "locations": null,
+          "created_at": "2015-04-01T02:51:16.640Z",
+          "days": [
+            {
+              "id": 318,
+              "date": "2015/04/08",
+              "accepted": null,
+              "confirmed": false,
+              "time_start": "08:00 AM",
+              "time_end": "11:00 AM",
+              "accepted_time_start": null,
+              "accepted_time_end": null
+            },
+            {
+              "id": 319,
+              "date": "2015/04/08",
+              "accepted": null,
+              "confirmed": false,
+              "time_start": "08:00 PM",
+              "time_end": "10:00 PM",
+              "accepted_time_start": null,
+              "accepted_time_end": null
+            },
+            {
+              "id": 320,
+              "date": "2015/04/10",
+              "accepted": null,
+              "confirmed": false,
+              "time_start": "06:00 PM",
+              "time_end": "09:00 PM",
+              "accepted_time_start": null,
+              "accepted_time_end": null
+            }
+          ]
+        },
+        {
+          "id": 209,
+          "user": {
+            "id": 597,
+            "name": "Linnea Jacobs IV",
+            "photo_public_id": null
+          },
+          "message": "Voluptatem debitis aperiam dolorum repellat non consequatur.",
+          "status": "waiting",
+          "accepted_rejected_at": null,
+          "locations": null,
+          "created_at": "2015-04-01T02:51:16.663Z",
+          "days": [
+            {
+              "id": 321,
+              "date": "2015/04/02",
+              "accepted": null,
+              "confirmed": false,
+              "time_start": "08:00 AM",
+              "time_end": "11:00 AM",
+              "accepted_time_start": null,
+              "accepted_time_end": null
+            }
+          ]
+        }
+      ],
+      "code": "200",
+      "show_in_doc": 1,
+      "recorded": true
+    }
+  ],
+  "session_invitations#update": [
+    {
+      "verb": "PUT",
+      "path": "/api/v1/session_invitations/210",
+      "versions": [
+        "1.0"
+      ],
+      "query": null,
+      "request_data": {
+        "session_invitation": {
+          "comment": "Ok, let's do it!",
+          "status": "accepted",
+          "locations": [
+            "SF Country Club"
+          ],
+          "days_attributes": [
+            {
+              "id": 322,
+              "time_start": "09:00 AM",
+              "time_end": "10:00 AM",
+              "accepted": true
+            }
+          ]
+        }
+      },
+      "response_data": null,
+      "code": "204",
+      "show_in_doc": 1,
+      "recorded": true
+    }
+  ],
+  "session_requests#create": [
+    {
+      "verb": "POST",
+      "path": "/api/v1/session_requests",
+      "versions": [
+        "1.0"
+      ],
+      "query": null,
+      "request_data": {
+        "session_request": {
+          "invited_user_id": 603,
+          "message": "I will kick your ass!",
+          "locations": [
+            "Kolbi Arena",
+            "Costa Rica Country Club"
+          ],
+          "days_attributes": [
+            {
+              "date": "2015/04/08",
+              "time_start": "08:00 AM",
+              "time_end": "11:00 AM"
+            },
+            {
+              "date": "2015/04/08",
+              "time_start": "08:00 PM",
+              "time_end": "10:00 PM"
+            },
+            {
+              "date": "2015/04/10",
+              "time_start": "06:00 PM",
+              "time_end": "09:00 PM"
+            }
+          ]
+        }
+      },
+      "response_data": {
+        "id": 212,
+        "invited_user": {
+          "id": 603,
+          "name": "Miss Karson Thompson",
+          "photo_public_id": null
+        },
+        "message": "I will kick your ass!",
+        "status": "waiting",
+        "accepted_rejected_at": null,
+        "location": null,
+        "locations": [
+          "Kolbi Arena",
+          "Costa Rica Country Club"
+        ],
+        "accepted_locations": null,
+        "invited_user_comment": null,
+        "created_at": "2015-04-01T02:51:16.875Z",
+        "days": [
+          {
+            "id": 324,
+            "date": "2015/04/08",
+            "accepted": null,
+            "confirmed": false,
+            "time_start": "08:00 AM",
+            "time_end": "11:00 AM",
+            "accepted_time_start": null,
+            "accepted_time_end": null
+          },
+          {
+            "id": 325,
+            "date": "2015/04/08",
+            "accepted": null,
+            "confirmed": false,
+            "time_start": "08:00 PM",
+            "time_end": "10:00 PM",
+            "accepted_time_start": null,
+            "accepted_time_end": null
+          },
+          {
+            "id": 326,
+            "date": "2015/04/10",
+            "accepted": null,
+            "confirmed": false,
+            "time_start": "06:00 PM",
+            "time_end": "09:00 PM",
+            "accepted_time_start": null,
+            "accepted_time_end": null
+          }
+        ]
+      },
+      "code": "201",
+      "show_in_doc": 1,
+      "recorded": true
+    }
+  ],
+  "session_requests#feedback": [
+    {
+      "verb": "POST",
+      "path": "/api/v1/session_requests/214/feedback",
+      "versions": [
+        "1.0"
+      ],
+      "query": null,
+      "request_data": {
+        "feedback": {
+          "message": "it was fun!",
+          "skill_ids": [
+            46
+          ]
+        }
+      },
+      "response_data": {
+        "message": "it was fun!",
+        "skills": [
+          {
+            "id": 46,
+            "name": "Test Skill 2"
+          }
+        ]
+      },
+      "code": "200",
+      "show_in_doc": 1,
+      "recorded": true
+    }
+  ],
+  "session_requests#index": [
+    {
+      "verb": "GET",
+      "path": "/api/v1/session_requests",
+      "versions": [
+        "1.0"
+      ],
+      "query": "",
+      "request_data": null,
+      "response_data": [
+        {
+          "id": 215,
+          "invited_user": {
+            "id": 609,
+            "name": "Haven Nitzsche",
+            "photo_public_id": null
+          },
+          "message": "Minima eos non fuga ipsa ratione exercitationem ex veniam.",
+          "status": "waiting",
+          "accepted_rejected_at": null,
+          "location": null,
+          "locations": null,
+          "accepted_locations": null,
+          "invited_user_comment": null,
+          "created_at": "2015-04-01T02:51:17.042Z",
+          "days": [
+            {
+              "id": 329,
+              "date": "2015/04/08",
+              "accepted": null,
+              "confirmed": false,
+              "time_start": "08:00 AM",
+              "time_end": "11:00 AM",
+              "accepted_time_start": null,
+              "accepted_time_end": null
+            },
+            {
+              "id": 330,
+              "date": "2015/04/08",
+              "accepted": null,
+              "confirmed": false,
+              "time_start": "08:00 PM",
+              "time_end": "10:00 PM",
+              "accepted_time_start": null,
+              "accepted_time_end": null
+            },
+            {
+              "id": 331,
+              "date": "2015/04/10",
+              "accepted": null,
+              "confirmed": false,
+              "time_start": "06:00 PM",
+              "time_end": "09:00 PM",
+              "accepted_time_start": null,
+              "accepted_time_end": null
+            }
+          ]
+        },
+        {
+          "id": 216,
+          "invited_user": {
+            "id": 610,
+            "name": "Harmony VonRueden",
+            "photo_public_id": null
+          },
+          "message": "Aut nihil repudiandae maiores consequatur.",
+          "status": "accepted",
+          "accepted_rejected_at": null,
+          "location": null,
+          "locations": [
+            "SF Country Club",
+            "Arena Tennis Club"
+          ],
+          "accepted_locations": [
+            "SF Country Club"
+          ],
+          "invited_user_comment": "it will be fun!",
+          "created_at": "2015-04-01T02:51:17.064Z",
+          "days": [
+            {
+              "id": 332,
+              "date": "2015/04/02",
+              "accepted": true,
+              "confirmed": false,
+              "time_start": "08:00 AM",
+              "time_end": "11:00 AM",
+              "accepted_time_start": "08:00 AM",
+              "accepted_time_end": "10:00 AM"
+            }
+          ]
+        }
+      ],
+      "code": "200",
+      "show_in_doc": 1,
+      "recorded": true
+    }
+  ],
+  "session_requests#update": [
+    {
+      "verb": "PUT",
+      "path": "/api/v1/session_requests/213",
+      "versions": [
+        "1.0"
+      ],
+      "query": null,
+      "request_data": {
+        "session_request": {
+          "status": "confirmed",
+          "location": "SF Country Club",
+          "days_attributes": [
+            {
+              "id": 327,
+              "confirmed": true
+            }
+          ]
+        }
+      },
+      "response_data": null,
+      "code": "204",
+      "show_in_doc": 1,
+      "recorded": true
+    }
+  ],
+  "sessions#facebook_login": [
+    {
+      "verb": "POST",
+      "path": "/api/v1/facebook_login",
+      "versions": [
+        "1.0"
+      ],
+      "query": null,
+      "request_data": {
+        "oauth_token": "ABCDE"
+      },
+      "response_data": {
+        "auth_token": "PNxUBkEtNH46PH_yDXm_",
+        "user_id": 41,
+        "user_email": "william.blake@gmail.com"
+      },
+      "code": "200",
+      "show_in_doc": 1,
+      "recorded": true
+    }
+  ],
+  "subscriptions#create": [
+    {
+      "verb": "POST",
+      "path": "/api/v1/payment/subscriptions",
+      "versions": [
+        "1.0"
+      ],
+      "query": null,
+      "request_data": {
+        "source": "test_tok_2"
+      },
+      "response_data": {
+        "id": "test_su_4",
+        "current_period_start": 1427856676,
+        "current_period_end": 1430448676,
+        "status": "active",
+        "plan": {
+          "id": "test_subscription_plan",
+          "interval": "month",
+          "name": "StripeMock Default Plan ID",
+          "amount": 7,
+          "currency": "usd",
+          "object": "plan",
+          "livemode": false,
+          "interval_count": 1,
+          "trial_period_days": null
+        },
+        "cancel_at_period_end": false,
+        "canceled_at": null,
+        "ended_at": null,
+        "start": 1308595038,
+        "object": "subscription",
+        "trial_start": null,
+        "trial_end": null,
+        "customer": "test_cus_1",
+        "quantity": 1,
+        "tax_percent": null,
+        "metadata": {
+        }
+      },
+      "code": "200",
+      "show_in_doc": 1,
+      "recorded": true
+    }
+  ],
+  "subscriptions#index": [
+    {
+      "verb": "GET",
+      "path": "/api/v1/payment/subscriptions",
+      "versions": [
+        "1.0"
+      ],
+      "query": "",
+      "request_data": null,
+      "response_data": [
+        {
+          "id": "test_su_4",
+          "current_period_start": 1427856676,
+          "current_period_end": 1430448676,
+          "status": "active",
+          "plan": {
+            "id": "my_plan",
+            "interval": "month",
+            "name": "StripeMock Default Plan ID",
+            "amount": 1500,
+            "currency": "usd",
+            "object": "plan",
+            "livemode": false,
+            "interval_count": 1,
+            "trial_period_days": null
+          },
+          "cancel_at_period_end": false,
+          "canceled_at": null,
+          "ended_at": null,
+          "start": 1308595038,
+          "object": "subscription",
+          "trial_start": null,
+          "trial_end": null,
+          "customer": "test_cus_1",
+          "quantity": 1,
+          "tax_percent": null,
+          "metadata": {
+          }
+        }
+      ],
+      "code": "200",
+      "show_in_doc": 1,
+      "recorded": true
+    }
+  ],
+  "user_favorites#index": [
+    {
+      "verb": "GET",
+      "path": "/api/v1/users/611/favorites",
+      "versions": [
+        "1.0"
+      ],
+      "query": "",
+      "request_data": null,
+      "response_data": [
+        {
+          "id": 15,
+          "ordering": 1,
+          "favorite": {
+            "id": 612,
+            "email": "glover_luther@altenwerth.info",
+            "confirmed": false,
+            "matches_count": 0,
+            "stripe_customer_id": null,
+            "profile": {
+              "name": "Luther Glover",
+              "age": 30,
+              "gender": "m",
+              "level": "1.0",
+              "location": "Boston",
+              "about": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+              "availability": [
+
+              ],
+              "photo_public_id": null,
+              "hourly_rate": 5.99,
+              "skills": [
+
+              ]
+            }
+          }
+        },
+        {
+          "id": 16,
+          "ordering": 2,
+          "favorite": {
+            "id": 614,
+            "email": "moore.garett@bayerspinka.com",
+            "confirmed": false,
+            "matches_count": 0,
+            "stripe_customer_id": null,
+            "profile": {
+              "name": "Garett Moore",
+              "age": 30,
+              "gender": "m",
+              "level": "1.0",
+              "location": "Boston",
+              "about": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+              "availability": [
+
+              ],
+              "photo_public_id": null,
+              "hourly_rate": 5.99,
+              "skills": [
+
+              ]
+            }
+          }
+        }
+      ],
+      "code": "200",
+      "show_in_doc": 1,
+      "recorded": true
+    }
+  ],
+  "users#index": [
+    {
+      "verb": "GET",
+      "path": "/api/v1/users",
+      "versions": [
+        "1.0"
+      ],
+      "query": "",
+      "request_data": null,
+      "response_data": [
+        {
+          "id": 617,
+          "email": "brayan.ms.effertz@schuster.com",
+          "confirmed": false,
+          "matches_count": 0,
+          "stripe_customer_id": null,
+          "profile": {
+            "name": "Ms. Brayan Effertz",
+            "age": 30,
+            "gender": "m",
+            "level": "1.0",
+            "location": "Boston",
+            "about": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            "availability": [
+              {
+                "day": "mon",
+                "time": "night"
+              },
+              {
+                "day": "tue",
+                "time": "afternoon"
+              }
+            ],
+            "photo_public_id": null,
+            "hourly_rate": 5.99,
+            "skills": [
+              {
+                "id": 47,
+                "name": "Forehand"
+              },
+              {
+                "id": 48,
+                "name": "Backhand"
+              }
+            ]
+          }
+        }
+      ],
+      "code": "200",
+      "show_in_doc": 1,
+      "recorded": true
+    }
+  ],
+  "users#locations": [
+    {
+      "verb": "GET",
+      "path": "/api/v1/users/620/locations",
+      "versions": [
+        "1.0"
+      ],
+      "query": "",
+      "request_data": null,
+      "response_data": [
+        "Costa Rica Tennis Club",
+        "Longwood Cricket Club"
+      ],
+      "code": "200",
+      "show_in_doc": 1,
+      "recorded": true
+    }
+  ],
+  "users#show": [
+    {
+      "verb": "GET",
+      "path": "/api/v1/users/619",
+      "versions": [
+        "1.0"
+      ],
+      "query": "",
+      "request_data": null,
+      "response_data": {
+        "id": 619,
+        "email": "lakin_brittany@hackett.info",
+        "confirmed": false,
+        "matches_count": 0,
+        "stripe_customer_id": null,
+        "profile": {
+          "name": "Brittany Lakin",
+          "age": 30,
+          "gender": "m",
+          "level": "1.0",
+          "location": "Boston",
+          "about": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+          "availability": [
+            {
+              "day": "mon",
+              "time": "night"
+            },
+            {
+              "day": "tue",
+              "time": "afternoon"
+            }
+          ],
+          "photo_public_id": null,
+          "hourly_rate": 5.99,
+          "skills": [
+            {
+              "id": 49,
+              "name": "Forehand"
+            },
+            {
+              "id": 50,
+              "name": "Backhand"
+            }
+          ]
+        }
+      },
+      "code": "200",
+      "show_in_doc": 1,
+      "recorded": true
+    }
+  ],
+  "users#update": [
+    {
+      "verb": "PUT",
+      "path": "/api/v1/users/618",
+      "versions": [
+        "1.0"
+      ],
+      "query": null,
+      "request_data": {
+        "user": {
+          "profile_attributes": {
+            "name": "Guillermo Vargas",
+            "gender": "m",
+            "level": "2.5",
+            "age": "34",
+            "about": "Rails developer",
+            "location": "Costa Rica",
+            "lat": "1.111",
+            "lng": "-1.321",
+            "photo_public_id": "pjxlnrigoijmmeibdi0u",
+            "hourly_rate": "10.5",
+            "availability": [
+              {
+                "day": "mon",
+                "time": "night"
+              },
+              {
+                "day": "tue",
+                "time": "afternoon"
+              }
+            ]
+          }
+        }
+      },
+      "response_data": null,
+      "code": "204",
+      "show_in_doc": 1,
+      "recorded": true
+    }
+  ]
+}

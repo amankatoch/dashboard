@@ -1,0 +1,49 @@
+## Welcome to PracticeGigs Development Team
+
+
+## Getting Started
+
+
+1. At the command prompt, clone the project:
+
+        git clone git@github.com:PracticeGigs/backend.git practicegigs-api
+
+2. Change directory to <tt>brandscopic</tt> and start the web server:
+
+        cd practicegigs-api
+
+3. Create a database.yml file inside the config folder with the following content:
+
+        development:
+          adapter: postgresql
+          database: practicegigs_dev
+          encoding: unicode
+          username: <your_user_name>
+          password:
+          server: 127.0.0.1
+
+        test:
+          adapter: postgresql
+          database: practicegigs_test
+          encoding: unicode
+          username: <your_user_name>
+          password:
+          server: 127.0.0.1
+          min_messages: WARNING
+
+
+4. Make sure you have [Redis](http://redis.io/):
+
+  For MacOS, type:
+
+        brew update && brew install redis
+
+5. Install the required gems:
+
+        bundle install
+
+6. Create the local database
+
+        rake db:create db:migrate
+
+7. Start foreman which starts redis-server, rails server and a worker for background processing

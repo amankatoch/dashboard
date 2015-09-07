@@ -1,0 +1,23 @@
+<%= form_tag(admin_settings_save_path, method: "post") do %>
+  <fieldset class="inputs">
+    <legend><span>Token Attributes</span></legend>
+
+    <ol>
+      <li class="string input required stringish" id="setting_stripe_subscription_plan">
+        <label class="label" for="setting_stripe_subscription_plan">Subscription Plan<abbr title="required">*</abbr></label>
+        <select id="setting_stripe_subscription_plan" name="settings[stripe_subscription_plan]">
+          <%- Stripe::Plan.all.data.each do |plan| %>
+          <option value="<%= plan.id %>"><%= "#{plan.name} (#{number_with_precision(plan.amount/100, precision: 2)} #{plan.currency}/#{plan.interval})" %></option>
+          <% end %>
+        </select>
+      </li>
+    </ol>
+  </fieldset>
+
+  <fieldset class="actions">
+    <ol>
+      <li class="action input_action " id="api_token_submit_action"><input name="commit" type="submit" value="Save Settings"></li>
+      <li class="cancel"><a href="/admin/api_tokens">Cancel</a></li>
+    </ol>
+  </fieldset>
+<% end %>

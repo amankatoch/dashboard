@@ -1,0 +1,18 @@
+<p>Hi <%= @resource.name %>!</p>
+
+<p>It feels great to welcome into the PracticeGigs network. Truly.</p>
+<p>Please just confirm you email account through the link below:<br />
+<p><%= link_to user_confirmation_url(confirmation_token: @token), user_confirmation_url(confirmation_token: @token) %></p>
+
+<p>Here are a few of the awesome things to come once you confirm:</p>
+<ol>
+<li><b>Access to a huge network of people that want to improve.</b></li>
+<li><b>Practices with better players without the awkwardness of asking (we’ll handle the money and scheduling).</b></li>
+<li><b>Occasional discounts and deals at the stores that you shop at (yeah we’re negotiating for you)!</b></li>
+</ol>
+
+<p>We hope you’ll share PracticeGigs with friends, family, or just all around cool people, but most importantly we hope you schedule a session today.</p>
+<p>Thanks for joining our community! We feel certain you won't regret the commitment.</p>
+<p>Best to you,<br />
+The PracticeGigs Team</p>
+<p>P.S. Please email us any time at help@practicegigs.com to give feedback/suggestions about the app.</p>
