@@ -93,6 +93,7 @@ GEM
     cloudinary (1.0.81)
       aws_cf_signer
       rest-client
+    coderay (1.1.0)
     coffee-rails (4.0.1)
       coffee-script (>= 2.2.0)
       railties (>= 4.0.0, < 5.0)
@@ -168,11 +169,13 @@ GEM
       multi_json
     mail (2.6.3)
       mime-types (>= 1.16, < 3)
+    method_source (0.8.2)
     mime-types (2.4.3)
     minitest (5.5.0)
     mono_logger (1.1.0)
     multi_json (1.10.1)
     multipart-post (2.0.0)
+    mysql2 (0.3.20)
     net-scp (1.2.1)
       net-ssh (>= 2.6.5)
     net-ssh (2.9.1)
@@ -185,6 +188,10 @@ GEM
     polyamorous (1.1.0)
       activerecord (>= 3.0)
     powerpack (0.0.9)
+    pry (0.10.1)
+      coderay (~> 1.1.0)
+      method_source (~> 0.8.1)
+      slop (~> 3.4)
     puma (2.9.2)
       rack (>= 1.1, < 2.0)
     rack (1.5.2)
@@ -349,7 +356,8 @@ DEPENDENCIES
   jbuilder (~> 2.0)
   jquery-rails
   koala (~> 1.11.0rc)
-  pg
+  mysql2
+  pry
   puma
   rails (= 4.1.7)
   ransack

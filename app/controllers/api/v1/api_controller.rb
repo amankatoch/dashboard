@@ -2,8 +2,8 @@ class Api::V1::ApiController < ApplicationController
 
   respond_to :json
 
-  before_action :validate_api_token!
-  before_action :authenticate_user_from_token!
+  #before_action :validate_api_token!
+  #before_action :authenticate_user_from_token!
 
   after_action :update_token_last_used_date
 
@@ -70,15 +70,19 @@ class Api::V1::ApiController < ApplicationController
   end
 
   def validate_api_token!
+
     token = request.headers['X-Api-Token'].try(:strip)
+     binding.pry
     fail Api::V1::InvalidApiToken.new(token) unless token.present?
 
     @api_token = ApiToken.find_by(token: token)
+
     fail Api::V1::InvalidApiToken.new(token) unless @api_token.present?
   end
 
   # Validate token authentication via headers
   def authenticate_user_from_token!
+    
     token = request.headers['X-Auth-Token']
     email = request.headers['X-User-Email']
 
